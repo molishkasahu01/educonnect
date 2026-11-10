@@ -10,7 +10,8 @@ services:
     name: educonnect-api
     runtime: docker
     rootDir: backend
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
     plan: free
     healthCheckPath: /api/health
     envVars:
@@ -40,7 +41,7 @@ services:
     runtime: node
     rootDir: frontend
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci --include=dev && npm run build
     startCommand: npx next start -H 0.0.0.0 -p ${PORT:-3000}
     envVars:
       - key: NODE_ENV
