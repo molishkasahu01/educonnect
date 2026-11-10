@@ -1,0 +1,1 @@
+# EDXSO backend core package

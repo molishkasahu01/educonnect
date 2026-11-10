@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg-canvas: #060b16;
+  --bg-surface: #0b1222;
+  --bg-elevated: #111b31;
+  --border-subtle: #1f2e4d;
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent-indigo: #6366f1;
+  --accent-blue: #38bdf8;
+  accent-color: #6366f1;
+  scrollbar-color: #334155 #0b1222;
+}
+
+html,
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.table-wrapper {
+  overflow: auto;
+  max-inline-size: 100%;
+  container-type: inline-size;
+}
+
+@media (forced-colors: active) {
+  .surface-card {
+    border: 1px solid CanvasText;
+  }
+}

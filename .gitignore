@@ -1,0 +1,12 @@
+.env
+*.db
+*.sqlite
+*.log
+__pycache__/
+.venv/
+.pytest_cache/
+node_modules/
+.next/
+test-results/
+playwright-report/
+tsconfig.tsbuildinfo
